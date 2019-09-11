@@ -3,19 +3,18 @@ services:
   - docker
 
 before_install:
-  - pip install ansible
+  - sudo apt-get install -y ansible
   - ansible-galaxy install sky_joker.ansible_vmware_govcsim_provisioner -p roles
 
 jobs:
   include:
-    - stage: python tool test
+    - stage: tool test
       name: python test
       language: python
       python: 3.6
       script:
         - ls
-    - stage: go tool test
-      name: go test
+    - name: go test
       language: go
       go: 1.11.1
       script:
