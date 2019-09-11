@@ -19,4 +19,4 @@ jobs:
       language: go
       go: 1.11.1
       script:
-        - go/go
+        - go run go/get-vm.go
