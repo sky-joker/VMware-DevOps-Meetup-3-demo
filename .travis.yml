@@ -1,10 +1,10 @@
-#language: python
 services:
   - docker
 
 before_install:
-  - sudo apt-get install -y ansible
+  - sudo pip install ansible docker-compose
   - ansible-galaxy install sky_joker.ansible_vmware_govcsim_provisioner -p roles
+  - ansible-playbook vcsim_provisioning.yml
 
 jobs:
   include:
@@ -13,9 +13,10 @@ jobs:
       language: python
       python: 3.6
       script:
-        - ls
+        - pip install pyvmomi
+        - python python/get-vm.py
     - name: go test
       language: go
       go: 1.11.1
       script:
-        - ls
+        - go/go
