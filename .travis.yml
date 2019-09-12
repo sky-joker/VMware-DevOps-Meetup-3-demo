@@ -20,3 +20,9 @@ jobs:
       go: 1.11.1
       script:
         - go run go/get-vm.go
+    - name: ruby test
+      language: ruby
+      rvm: 2.6.4
+      script:
+        - gem install rbvmomi
+        - ruby ruby/get-vm.rb
