@@ -1,6 +1,8 @@
 services:
   - docker
 
+dist: xenial
+
 before_install:
   - sudo pip install ansible docker-compose
   - ansible-galaxy install sky_joker.ansible_vmware_govcsim_provisioner -p roles
