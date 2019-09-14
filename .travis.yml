@@ -5,7 +5,7 @@ before_install:
   - sudo pip install ansible docker-compose
   - ansible-galaxy install sky_joker.ansible_vmware_govcsim_provisioner -p roles
   - ansible-playbook vcsim_provisioning.yml
-  - if [ -n "$POWERSHELL" ] ; sudo source powershell/setup.sh ; fi
+  - if [ -n "$POWERSHELL" ]; then sudo source powershell/setup.sh ; fi
 
 jobs:
   include:
